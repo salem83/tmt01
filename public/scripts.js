@@ -81,10 +81,12 @@ screenshotButton.onclick = () => {
 
 screenshotUpload.onclick = () => {
     const scrList = screenshotList.childNodes;
+    const oresult = document.getElementById('ocr_result');
+    const serverName = document.getElementById('trackid-server');
 
     const trackInfo = {};
-    trackInfo.trackName = 'test1';
-    trackInfo.server = '123123';
+    trackInfo.trackName = oresult.innerHTML;
+    trackInfo.server = serverName.value;
     trackInfo.time = new Date().getTime().toString();
     trackInfo.screens = [];
     
@@ -127,6 +129,8 @@ function addScreenshot(type, canvas) {
     const node = document.createElement('img');
     node.src = canvas.toDataURL("image/webp");
     node.className = 'screenshot';
+    if(type == 'trackname')
+      node.className += 'trackname';
     node.alt = type;
     screenshotList.appendChild(node);
 
@@ -159,8 +163,10 @@ function doORC(img) {
       // otext = text;
       await worker.terminate();
       
+
+      
     })();
-    //return otext;
+    
 }
 
 

@@ -15,6 +15,12 @@
     margin: 10px;
 }
 
+.trackname {
+    width: 160px;
+    width: 10px;
+
+}
+
 div {
     border: 1px lime solid;
 }
