@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>TMT</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/public/style.css">
+        
+    </head>
+    <body>
+        
+        <div id="container" class="center">
+            <h1>TMT</h1>
+            <video id="video-stream" autoplay=""></video>
+            <canvas id="mirror-canvas" style="display:none"></canvas>
+            <p><button id="start-capture-button">Start capture</button>
+                <button id="screenshot-take-button">Take screenshot</button>
+                <button id="screenshot-clear-button">Clear screenshots</button>
+                <button id="screenshot-upload-button">Upload</button>
+            </p>
+            <p> <input id="trackid-name" />
+                <button id="trackid-button">Get Track ID</button>
+                <canvas id="trackid-canvas"></canvas>
+            </p>
+            <p>
+                <div id="ocr_status"></div>
+                <div id="ocr_result"></div>
+            </p>
+
+            <p>Screenshots:</p>
+            <div id="screenshot-list" class="child"></div>
+        </div>
+    </body>
+    <script src="../node_modules/tesseract.js/dist/tesseract.min.js"></script>
+    <script src="/public/scripts.js"></script>
+    
+</html>
